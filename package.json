@@ -1,0 +1,27 @@
+{
+  "name": "foodie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Steinberg99/progressive-web-apps-2223.git"
+  },
+  "author": "Stein Bergervoet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Steinberg99/progressive-web-apps-2223/issues"
+  },
+  "homepage": "https://github.com/Steinberg99/progressive-web-apps-2223#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.9",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
