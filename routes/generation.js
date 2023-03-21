@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const getPokemonByGeneration = require("../utils/getPokemonByGeneration");
 
-router.get("/", async (req, res) => {
-  const pokemonData = await getPokemonByGeneration(1);
+router.get("/generation/:generationId", async (req, res) => {
+  const pokemonData = await getPokemonByGeneration(req.params.generationId);
 
   res.render("home", {
     pokemonData,
