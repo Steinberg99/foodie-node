@@ -4,7 +4,6 @@ const fetchProductData = require("../utils/fetchProductData");
 
 router.get("/product/:productId", async (req, res) => {
   const data = await fetchProductData(req.params.productId);
-
   const product = data.product;
 
   res.render("product", {

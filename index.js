@@ -6,6 +6,7 @@ const server = http.createServer(app);
 
 app.set("view engine", "pug");
 app.use(express.static("static"));
+app.use(express.urlencoded({ extended: true }));
 
 const homeRoutes = require("./routes/home");
 const productRoutes = require("./routes/product");

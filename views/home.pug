@@ -4,9 +4,15 @@ html
 
     body
         main
-            h1= title
+            div
+                video(src="")
 
             div
-              video(src="")
+                form(action="/search", method="post")
+                    label(for="barcode") Barcode
+
+                    input(id="barcode", type="number", name="barcode")
+
+                    button(type="submit") Search
 
         script(src="../public/scripts/barcode.js")
