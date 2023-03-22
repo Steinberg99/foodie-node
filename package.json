@@ -10,9 +10,7 @@
     "build": "npm-run-all build:*",
     "build:css": "node scripts/build-css.js",
     "build:js": "node scripts/build-js.js",
-    "watch": "npm-run-all watch:*",
-    "watch:css": "chokidar 'src/css/*.css' --command 'npm run build:css'",
-    "watch:js": "chokidar 'src/js/*.js' --command 'npm run build:js'"
+    "watch": "chokidar 'src/css/*.css' --command 'npm run build:css' & chokidar 'src/js/*.js' --command 'npm run build:js'"
   },
   "repository": {
     "type": "git",
@@ -35,6 +33,7 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
     "nodemon": "^2.0.21",
     "npm-run-all": "^4.1.5",
     "rimraf": "^4.4.0"
