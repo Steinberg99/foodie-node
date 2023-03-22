@@ -1,11 +1,15 @@
 <% if (!pokemonData) { %>
   <p>No Pokémon have been found!</p>
 <% } else { %>
-  <ul class="movie-list" data-search-results>
+  <ul class="pokemon-list">
     <% pokemonData.forEach(pokemon => { %>
-    <li>
-      <a href="/pokemon/<%= pokemon.id %>"> <%= pokemon.name %> </a>
-    </li>
+      <li>
+        <a href="/pokemon/<%= pokemon.id %>">
+          <img src="<%= pokemon.sprites.front%>">
+
+          <span><%= pokemon.name%></span>
+        </a>
+      </li>
     <% }) %>
   </ul>
 <% } %>

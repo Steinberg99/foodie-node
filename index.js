@@ -8,12 +8,12 @@ app.set("view engine", "ejs");
 app.use(express.static("static"));
 app.use(express.urlencoded({ extended: true }));
 
+const generationRoutes = require("./routes/generation");
 const homeRoutes = require("./routes/home");
-const overviewRoutes = require("./routes/generation");
 const pokemonRoutes = require("./routes/pokemon");
 
+app.use("/", generationRoutes);
 app.use("/", homeRoutes);
-app.use("/", overviewRoutes);
 app.use("/", pokemonRoutes);
 
 app.use((req, res) => {
