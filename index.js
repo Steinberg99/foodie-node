@@ -8,13 +8,15 @@ app.set("view engine", "ejs");
 app.use(express.static("static"));
 app.use(express.urlencoded({ extended: true }));
 
-const generationRoutes = require("./routes/generation");
+const barcodeRoutes = require("./routes/barcode");
 const homeRoutes = require("./routes/home");
-const pokemonRoutes = require("./routes/pokemon");
+const offlineRoutes = require("./routes/offline");
+const productRoutes = require("./routes/product");
 
-app.use("/", generationRoutes);
+app.use("/", barcodeRoutes);
 app.use("/", homeRoutes);
-app.use("/", pokemonRoutes);
+app.use("/", offlineRoutes);
+app.use("/", productRoutes);
 
 app.use((req, res) => {
   res.status(404).send("Error 404");

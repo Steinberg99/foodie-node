@@ -8,9 +8,10 @@
     "start": "nodemon index.js & npm run watch",
     "prebuild": "rimraf ./static",
     "build": "npm-run-all build:*",
+    "build:assets": "node scripts/build-assets.js",
     "build:css": "node scripts/build-css.js",
     "build:js": "node scripts/build-js.js",
-    "watch": "chokidar 'src/css/*.css' --command 'npm run build:css' & chokidar 'src/js/*.js' --command 'npm run build:js'"
+    "watch": "chokidar 'src/**/*.*' --command 'npm run build:assets' & chokidar 'src/css/*.css' --command 'npm run build:css' & chokidar 'src/js/*.js' --command 'npm run build:js'"
   },
   "repository": {
     "type": "git",

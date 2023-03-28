@@ -1,5 +1,24 @@
 <%- include('partials/head') %>
 
-<%- include('partials/overview', { pokemonData }) %>
+<main>
+  <section>
+    <h1>Welcome to Foodie</h1>
+
+    <p>
+      Foodie provides users with access to the nutritional value of food items by simply scanning their barcodes. By using
+      Foodie, users can take control of their diet and make healthier choices!
+    </p>
+  </section>
+
+  <a href="/barcode">Scan barcode</a>
+
+  <form action="/product" method="POST">
+    <label class="visibly-hidden" for="barcode">Barcode</label>
+
+    <input id="barcode" type="text" name="barcode" />
+
+    <button type="submit">Search</button>
+  </form>
+</main>
 
 <%- include('partials/footer') %>

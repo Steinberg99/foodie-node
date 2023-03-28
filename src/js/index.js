@@ -1,1 +1,1 @@
-console.log("index-min.js loaded");
+console.log("index.js loaded");
