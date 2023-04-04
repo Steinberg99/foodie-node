@@ -23,11 +23,11 @@
   <% if(pagination.hasPreviousPage || pagination.hasNextPage) { %>
   <div class="pagination">
     <% if(pagination.hasPreviousPage) { %>
-      <a href="/products/<%= productName %>/<%= pageNumber -= 1 %>">Previous page</a>
+      <a href="/products/<%= productName %>/<%= pageNumber - 1 %>">Previous page</a>
     <% } %>
 
     <% if(pagination.hasNextPage) { %>
-      <a href="/products/<%= productName %>/<%= pageNumber += 1 %>">Next page</a>
+      <a href="/products/<%= productName %>/<%= pageNumber + 1 %>">Next page</a>
     <% } %>
   </div>
   <% } %>
