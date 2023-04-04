@@ -1,16 +1,11 @@
 <%- include('partials/head') %>
 
 <main>
+  <% if (count !== 0) { %>
   <section>
-    <h1>Search results for <% productName %></h1>
+    <h1>Search results for <%= productName %></h1>
 
-    <% if (count === 0) { %>
-    <p class="error">
-      We're sorry, but the product you entered is not available in our database. Please try to search for another product.
-    </p>
-
-    <a href="/">Return to home</a>
-    <% } %>
+    <p><%= count %> results</p>
   </section>
 
   <ul>
@@ -24,6 +19,27 @@
     </li>
     <% }) %>
   </ul>
+
+  <% if(pagination.hasPreviousPage || pagination.hasNextPage) { %>
+  <div class="pagination">
+    <% if(pagination.hasPreviousPage) { %>
+      <a href="/products/<%= productName %>/<%= pageNumber -= 1 %>">Previous page</a>
+    <% } %>
+
+    <% if(pagination.hasNextPage) { %>
+      <a href="/products/<%= productName %>/<%= pageNumber += 1 %>">Next page</a>
+    <% } %>
+  </div>
+  <% } %>
+  <% } else { %>
+  <section>
+    <h1>Search results for <% productName %></h1>
+
+    <p class="error">We're sorry, but the product you entered is not available in our database.</p>
+
+    <a href="/">Return to home</a>
+  </section>
+  <% } %>
 </main>
 
 <%- include('partials/footer') %>

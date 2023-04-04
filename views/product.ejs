@@ -1,9 +1,17 @@
 <%- include('partials/head') %>
 
 <main>
+  <% if(product) { %>
   <section>
     <h1><%= product.product_name %></h1>
   </section>
+  <% } else { %>
+  <section>
+    <h1>Whoops!</h1>
+
+    <p class="error">We're sorry, but the product you entered is not available in our database.</p>
+  </section>
+  <% } %>
 </main>
 
 <%- include('partials/footer') %>

@@ -1,17 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const getProductsByNameAndPageNumber = require("../utils/getProductsByNameAndPageNumber");
+const checkPreviousNextPage = require("../utils/checkPreviousNextPage");
 
 router.get("/products/:productName/:pageNumber", async (req, res) => {
   const data = await getProductsByNameAndPageNumber(req.params.productName, req.params.pageNumber);
-
-  // TODO: Add pagination calculation
-
-  // TODO: Add error handling
+  const pagination = checkPreviousNextPage(data.count, 24, req.params.pageNumber);
 
   res.render("products", {
     count: data.count,
-    error: false,
+    pageNumber: parseInt(req.params.pageNumber),
+    pagination,
     productName: req.params.productName,
     products: data.products,
   });
