@@ -1,1 +1,1 @@
-console.log("index.js loaded");
+!function(){const e=document.querySelector("video");if(!e)return;let a=new BarcodeDetector({formats:["ean_13","ean_8","upc_a","upc_e"]});(async()=>{const n=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}}});e.srcObject=n,await e.play(),window.setInterval(async()=>{const n=await a.detect(e);n.length<=0||window.location.replace(`${window.location.origin}/product/${n[0].rawValue}`)},1e3)})()}(),console.log("index.js loaded");

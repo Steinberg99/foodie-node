@@ -17,8 +17,20 @@ self.addEventListener("fetch", (event) => {
       caches
         .open(RUNTIME_CACHE)
         .then((cache) => cache.match(event.request))
-        .then((response) => response || fetch(event.request))
+        .then((response) => response || fetchAndCache(event.request))
         .catch(() => caches.open(CORE_CACHE).then((cache) => cache.match("/offline"))),
     );
   }
 });
+
+const fetchAndCache = (request) => {
+  return fetch(request)
+    .then(response => {
+      const clone = response.clone();
+
+      caches.open(RUNTIME_CACHE)
+        .then(cache => cache.put(request, clone))
+
+      return response;
+    })
+}

@@ -1,27 +1,31 @@
-const camera = document.querySelector("video");
+(function () {
+  const camera = document.querySelector("video");
 
-let barcodeDetector = new BarcodeDetector({
-  formats: ["ean_13", "ean_8", "upc_a", "upc_e"],
-});
+  if (!camera) return;
 
-const scanBarcode = async () => {
-  const stream = await navigator.mediaDevices.getUserMedia({
-    video: {
-      facingMode: {
-        ideal: "environment",
-      },
-    },
+  let barcodeDetector = new BarcodeDetector({
+    formats: ["ean_13", "ean_8", "upc_a", "upc_e"],
   });
-  camera.srcObject = stream;
-  await camera.play();
 
-  window.setInterval(async () => {
-    const barcodes = await barcodeDetector.detect(camera);
+  const scanBarcode = async () => {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: {
+          ideal: "environment",
+        },
+      },
+    });
+    camera.srcObject = stream;
+    await camera.play();
 
-    if (barcodes.length <= 0) return;
+    window.setInterval(async () => {
+      const barcodes = await barcodeDetector.detect(camera);
 
-    window.location.replace(`${window.location.origin}/product/${barcodes[0].rawValue}`);
-  }, 1000);
-};
+      if (barcodes.length <= 0) return;
 
-scanBarcode();
+      window.location.replace(`${window.location.origin}/product/${barcodes[0].rawValue}`);
+    }, 1000);
+  };
+
+  scanBarcode();
+})();
