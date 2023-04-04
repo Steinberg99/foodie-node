@@ -15,7 +15,15 @@
   <form action="/product" method="POST">
     <label class="visibly-hidden" for="barcode">Barcode</label>
 
-    <input id="barcode" type="text" name="barcode" />
+    <input id="barcode" type="text" name="barcode" placeholder="Barcode" />
+
+    <button type="submit">Search</button>
+  </form>
+
+  <form action="/products" method="POST">
+    <label for="product">Product name</label>
+
+    <input id="product" type="text" name="product" placeholder="Product name" />
 
     <button type="submit">Search</button>
   </form>

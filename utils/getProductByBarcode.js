@@ -2,8 +2,10 @@ const fetch = require("node-fetch");
 
 const getProductByBarcode = async (productId) => {
   try {
-    const response = await fetch(`https://world.openfoodfacts.org/api/v0/product/${productId}`);
-    const productData = await response.json();
+    const url = `https://world.openfoodfacts.org/api/v0/product/${productId}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    const productData = data.product;
 
     return productData;
   } catch (error) {

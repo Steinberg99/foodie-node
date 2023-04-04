@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+
+<main>
+  <section>
+    <h1>Search results for <% productName %></h1>
+
+    <% if (count === 0) { %>
+    <p class="error">
+      We're sorry, but the product you entered is not available in our database. Please try to search for another product.
+    </p>
+
+    <a href="/">Return to home</a>
+    <% } %>
+  </section>
+
+  <ul>
+    <% products.forEach(product => { %>
+    <li class="product">
+      <img src="<%= product.image_url %>" />
+
+      <p><%= product.product_name; %></p>
+
+      <a href="/product/<%= product._id %>">More information</a>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+
+<%- include('partials/footer') %>
