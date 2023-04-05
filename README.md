@@ -26,6 +26,16 @@ When you have cloned the repository be sure to run the command `npm install` to 
 
 ![Lighthouse score](./src/images/lighthouse.png)
 
+# Performance
+
+To improve the performance of foodie! I implemented the following features:
+
+- A service worker to cache core assets and pages.
+- HTTP caching op the server.
+- Minifying of client side Javascript and CSS files.
+- Server side rendering.
+- Downloaded font files with a fallback font.
+
 # Technologies
 
 DogeMeet makes use of the following technologies:
