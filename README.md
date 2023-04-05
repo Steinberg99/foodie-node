@@ -1,6 +1,8 @@
-# Progressive Web Apps
+# foodie!
 
 A website that allows it's users to scan barcodes of food related items to access nutritional data.
+
+![foodie!](./src/images/foodie.png)
 
 ## Live site
 
@@ -19,6 +21,10 @@ You can install the project locally by running the following command in your loc
 - `git clone https://github.com/Steinberg99/progressive-web-apps-2223/`
 
 When you have cloned the repository be sure to run the command `npm install` to install all of the project dependencies. Run this command in the root folder of the project. When you have done this you can run the command `npm start` to start the project. The website should run in the browser when visiting `localhost:4200`.
+
+# Lighthouse score
+
+![Lighthouse score](./src/images/lighthouse.png)
 
 # Technologies
 
