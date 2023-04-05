@@ -6,7 +6,7 @@ A website that allows it's users to scan barcodes of food related items to acces
 
 ## Live site
 
-The website is currently not live.
+[Live site](https://outrageous-tutu-clam.cyclic.app/).
 
 ## Description
 
