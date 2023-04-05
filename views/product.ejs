@@ -1,9 +1,13 @@
 <%- include('partials/head') %>
 
-<main>
+<main class="product">
   <% if(product) { %>
   <section>
     <h1><%= product.product_name %></h1>
+
+    <img src="<%= product.image_url %>" alt="" />
+
+    <p><%= product.categories %></p>
   </section>
   <% } else { %>
   <section>

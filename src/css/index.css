@@ -1,6 +1,15 @@
+/* Font */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* General styles */
+
 :root {
   --white: #fff;
   --black: #000;
+  --dark-green: #014242;
+  --green: #006674;
+  --light-gray: #f5f5f5;
 }
 
 *,
@@ -8,10 +17,241 @@ main {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
 }
 
 li {
   list-style-type: none;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: var(--dark-green);
+}
+
+p {
+  margin-bottom: 1rem;
+
+  font-weight: 400;
+
+  color: var(--black);
+}
+
+a,
+header > div > form > button {
+  display: block;
+
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  border: 0;
+  border-radius: 50rem;
+
+  background-color: var(--green);
+  color: var(--white);
+
+  text-decoration: none;
+
+  transition: background-color 300ms ease-in-out;
+}
+
+a:hover,
+header > div > form > button:hover {
+  background-color: var(--dark-green);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 5rem;
+  height: 5rem;
+  padding: 2rem;
+  border-radius: 0;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  background-color: var(--dark-green);
+  color: white;
+
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.logo:hover {
+  background-color: transparent;
+  color: var(--dark-green);
+
+  border: 0.125rem solid var(--dark-green);
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+header > div > form {
+  display: flex;
+  column-gap: 1rem;
+}
+
+header > div > form > input {
+  padding: 0.875rem 1.5rem;
+  border: 0.125rem solid var(--dark-green);
+  border-radius: 50rem;
+
+  font-size: 1rem;
+
+  background-color: var(--light-gray);
+}
+
+header > div > form > button {
+  display: inline;
+
+  font-size: 1rem;
+}
+
+/* Home & barcode */
+
+.home,
+.barcode,
+.product,
+.products {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.home > section > p,
+.barcode > section > p,
+.product > section > p {
+  margin-bottom: 3rem;
+}
+
+.home > a {
+  margin: 0 auto;
+}
+
+/* Barcode */
+
+video {
+  width: 100%;
+  border: 0.125rem solid var(--dark-green);
+  border-radius: 2rem;
+}
+
+.barcode > div {
+  position: relative;
+}
+
+.barcode > div > div {
+  position: absolute;
+
+  width: 5rem;
+  height: 5rem;
+  border: 0.25rem solid var(--white);
+}
+
+.barcode > div > div:nth-child(1) {
+  top: 1.5rem;
+  left: 1.5rem;
+
+  border-top-left-radius: 1rem;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.barcode > div > div:nth-child(2) {
+  top: 1.5rem;
+  right: 1.5rem;
+
+  border-top-right-radius: 1rem;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.barcode > div > div:nth-child(3) {
+  bottom: 1.5rem;
+  left: 1.5rem;
+
+  border-bottom-left-radius: 1rem;
+  border-top: 0;
+  border-right: 0;
+}
+
+.barcode > div > div:nth-child(4) {
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  border-bottom-right-radius: 1rem;
+  border-top: 0;
+  border-left: 0;
+}
+
+/* Products */
+
+.pagination {
+  display: flex;
+  column-gap: 1rem;
+
+  margin-bottom: 4rem;
+}
+
+.products > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.products > ul > li > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.products > ul > li > a > img {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.products > ul > li > a > p {
+  color: var(--white);
+  text-align: center;
+}
+
+/* Product */
+
+.product > section > img {
+  margin-bottom: 2rem;
 }
 
 /* General classes */

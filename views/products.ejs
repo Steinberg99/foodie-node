@@ -1,24 +1,12 @@
 <%- include('partials/head') %>
 
-<main>
+<main class="products">
   <% if (count !== 0) { %>
   <section>
     <h1>Search results for <%= productName %></h1>
 
     <p><%= count %> results</p>
   </section>
-
-  <ul>
-    <% products.forEach(product => { %>
-    <li class="product">
-      <img src="<%= product.image_url %>" />
-
-      <p><%= product.product_name; %></p>
-
-      <a href="/product/<%= product._id %>">More information</a>
-    </li>
-    <% }) %>
-  </ul>
 
   <% if(pagination.hasPreviousPage || pagination.hasNextPage) { %>
   <div class="pagination">
@@ -31,6 +19,18 @@
     <% } %>
   </div>
   <% } %>
+
+  <ul>
+    <% products.forEach(product => { %>
+    <li class="item">
+      <a href="/product/<%= product._id %>">
+        <img src="<%= product.image_url %>" alt="" />
+
+        <p><%= product.product_name; %></p>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
   <% } else { %>
   <section>
     <h1>Search results for <% productName %></h1>
