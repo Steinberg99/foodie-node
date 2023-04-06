@@ -273,3 +273,35 @@ video {
   top: -9999px;
   left: -9999px;
 }
+
+/* Responsive */
+
+@media only screen and (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: start;
+    row-gap: 1rem;
+  }
+
+  header > div {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .home,
+  .barcode,
+  .product,
+  .products {
+    padding: 0 1rem;
+  }
+
+  .products > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .products > ul {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,8 +3,6 @@ const CORE_CACHE = "cache-v1";
 const CORE_ASSETS = ["/offline", "/index.css", "/index.js"];
 
 self.addEventListener("install", (event) => {
-  console.log("service-worker.js loaded");
-
   event.waitUntil(
     caches
       .open(CORE_CACHE)
@@ -25,9 +23,7 @@ self.addEventListener("fetch", (event) => {
         .catch(() => caches.open(CORE_CACHE).then((cache) => cache.match("/offline"))),
     );
   } else if (CORE_ASSETS.includes(path)) {
-    event.respondWith(
-      caches.open(CORE_CACHE)
-      .then((cache) => cache.match(path)));
+    event.respondWith(caches.open(CORE_CACHE).then((cache) => cache.match(path)));
   }
 });
 
